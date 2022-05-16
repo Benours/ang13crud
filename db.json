@@ -1,10 +1,11 @@
 {
   "products": [
     {
-      "ProductName": "Test",
+      "ProductName": "Tast",
       "ProductDescription": "TEst",
       "ProductPrice": "TEst",
       "id": 1
     }
-  ]
+  ],
+  "stock": []
 }

@@ -26,6 +26,11 @@ const routes: Routes = [
         (m) => m.ProductGetModule
       ),
   },
+  {
+    path: '',
+    loadChildren: () =>
+      import('./stock/stock.module').then((m) => m.StockModule),
+  },
 ];
 
 @NgModule({
