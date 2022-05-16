@@ -8,7 +8,7 @@ import { ProductsService } from '../products.service';
   styleUrls: ['./product-get.component.css'],
 })
 export class ProductGetComponent implements OnInit {
-  products!: Product[];
+  products!: any;
 
   constructor(private ps: ProductsService) {}
 
@@ -19,7 +19,7 @@ export class ProductGetComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.ps.getProducts().subscribe((data: any) => {
+    this.ps.getProducts().subscribe((data) => {
       this.products = data;
     });
   }

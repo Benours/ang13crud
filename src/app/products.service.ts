@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import Product from './model/product';
 
 @Injectable({
   providedIn: 'root',
@@ -24,11 +25,11 @@ export class ProductsService {
   }
 
   getProducts() {
-    return this.http.get(`${this.uri}`);
+    return this.http.get<Product[]>(`${this.uri}`);
   }
 
   editProduct(id: number) {
-    return this.http.get(`${this.uri}/${id}`);
+    return this.http.get<Product>(`${this.uri}/${id}`);
   }
 
   updateProduct(
@@ -48,6 +49,6 @@ export class ProductsService {
   }
 
   deleteProduct(id: number) {
-    return this.http.get(`${this.uri}/${id}`);
+    return this.http.get<Product>(`${this.uri}/${id}`);
   }
 }

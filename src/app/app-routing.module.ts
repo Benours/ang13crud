@@ -7,15 +7,24 @@ import { ProductGetComponent } from './product-get/product-get.component';
 const routes: Routes = [
   {
     path: 'product/create',
-    component: ProductAddComponent,
+    loadChildren: () =>
+      import('./product-add/product-add.module').then(
+        (m) => m.ProductAddModule
+      ),
   },
   {
     path: 'edit/:id',
-    component: ProductEditComponent,
+    loadChildren: () =>
+      import('./product-edit/product-edit.module').then(
+        (m) => m.ProductEditModule
+      ),
   },
   {
     path: 'products',
-    component: ProductGetComponent,
+    loadChildren: () =>
+      import('./product-get/product-get.module').then(
+        (m) => m.ProductGetModule
+      ),
   },
 ];
 
