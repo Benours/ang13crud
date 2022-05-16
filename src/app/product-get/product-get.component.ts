@@ -12,6 +12,12 @@ export class ProductGetComponent implements OnInit {
 
   constructor(private ps: ProductsService) {}
 
+  deleteProduct(id: number) {
+    this.ps.deleteProduct(id).subscribe((res) => {
+      this.ngOnInit();
+    });
+  }
+
   ngOnInit(): void {
     this.ps.getProducts().subscribe((data: any) => {
       this.products = data;
