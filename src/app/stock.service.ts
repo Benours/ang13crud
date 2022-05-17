@@ -22,14 +22,16 @@ export class StockService {
   }
 
   getStock() {
-    this.http.get<Stock>(`${this.uri}`);
+    return this.http.get<Stock[]>(`${this.uri}`);
   }
 
-  updateProduct(quantity: number, id_product: number) {
+  updateProduct(quantity: number, id_product: number, id: number) {
     const obj = {
       quantity,
       id_product,
     };
-    this.http.put(`${this.uri}`, obj).subscribe((res) => console.log('DONE!'));
+    this.http
+      .put(`${this.uri}/${id}`, obj)
+      .subscribe((res) => console.log('DONE!'));
   }
 }

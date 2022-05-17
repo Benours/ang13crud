@@ -7,10 +7,10 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let product of products">
-      <td>{{ stock }}</td>
-      <td>{{ product.ProductName }}</td>
-      <td><a class="btn btn-secondary" (click)="canEdit()">Save</a></td>
+    <tr *ngFor="let p of stock">
+      <td>{{ p.quantity }}</td>
+      <td>{{ products[p.id_product - 1].ProductName }}</td>
+      <!-- <td><a class="btn btn-secondary" (click)="canEdit()">Save</a></td> -->
     </tr>
   </tbody>
 </table>
